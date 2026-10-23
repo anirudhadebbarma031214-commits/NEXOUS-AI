@@ -24,6 +24,20 @@ if errorlevel 1 (
   exit /b 1
 )
 
+if exist "D:\\" (
+  set "OLLAMA_MODELS=D:\\NEXOUS-AI-Models"
+  if not exist "D:\\NEXOUS-AI-Models" mkdir "D:\\NEXOUS-AI-Models"
+  echo Model files will be stored on D: to avoid filling the Windows drive.
+) else (
+  echo WARNING: D: drive not found. Ollama may store model files on C:.
+  echo Make sure C: has several GB free before continuing.
+)
+echo.
+echo Starting Ollama with the selected model folder...
+taskkill /IM ollama.exe /F >nul 2>nul
+start "NEXOUS Ollama" /min cmd /c "set OLLAMA_MODELS=%OLLAMA_MODELS% && ollama serve"
+timeout /t 8 /nobreak >nul
+echo.
 echo Checking/downloading the Qwen 2.5 3B model.
 echo The download needs several GB of free disk space and may take time.
 ollama pull qwen2.5:3b
@@ -32,11 +46,6 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-
-echo.
-echo Starting Ollama in the background if needed...
-start "NEXOUS Ollama" /min cmd /c "ollama serve"
-timeout /t 5 /nobreak >nul
 echo.
 echo Starting the NEXOUS local website.
 echo Keep this window open while using NEXOUS.
