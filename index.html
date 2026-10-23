@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d1c"><meta name="description" content="NEXOUS AI — your voice, your intelligence.">
+<title>NEXOUS AI — Voice Intelligence</title>
+<style>
+:root{color-scheme:dark;--bg:#080d1c;--panel:#101a2e;--line:#223654;--cyan:#52e4ff;--purple:#9a7bff;--text:#edf6ff;--muted:#91a6c3}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#17385a 0,transparent 55%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,Segoe UI,sans-serif;min-height:100vh}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px clamp(18px,5vw,64px);border-bottom:1px solid #ffffff12}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:2px}.logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:grid;place-items:center;color:#06101d;font-size:20px;box-shadow:0 0 28px #52e4ff30}.status{color:#9beec7;font-size:12px}.status:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#54e5a2;margin-right:8px}
+main{width:min(980px,92vw);margin:44px auto 60px}.eyebrow{text-align:center;color:var(--cyan);letter-spacing:4px;font-size:11px;font-weight:800}.hero{text-align:center;margin:12px 0 26px}.hero h1{font-size:clamp(38px,7vw,70px);line-height:1.05;margin:0;letter-spacing:-2px}.hero h1 span{background:linear-gradient(90deg,var(--cyan),#a4b4ff,var(--purple));background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:560px;margin:15px auto 0}
+.grid{display:grid;grid-template-columns:1fr 1.15fr;gap:18px}.panel{background:linear-gradient(145deg,#111d32f2,#0c1425f5);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 18px 60px #0003}.panel h2{font-size:14px;letter-spacing:1px;text-transform:uppercase;margin:0 0 16px;color:#c8dcf7}.orb-wrap{display:grid;place-items:center;padding:12px 0 20px}.orb{width:160px;height:160px;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 35% 30%,#4bcbff,#6e65ef 40%,#10182f 72%);box-shadow:0 0 30px #50dfff50, inset 0 0 25px #ffffff55;transition:.25s}.orb:before,.orb:after{content:"";position:absolute;inset:-12px;border:1px solid #52e4ff66;border-radius:50%;animation:pulse 3s ease-out infinite}.orb:after{inset:-24px;animation-delay:1.4s}.orb.listening{animation:breathe .8s ease-in-out infinite alternate;box-shadow:0 0 65px #a17cffb0}.orb span{font-size:40px;color:white;text-shadow:0 2px 12px #001}.orb-caption{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
+@keyframes pulse{0%{transform:scale(.88);opacity:.8}100%{transform:scale(1.18);opacity:0}}@keyframes breathe{to{transform:scale(1.06)}}
+button{border:0;border-radius:12px;padding:12px 15px;background:linear-gradient(100deg,#54e4ff,#8c8bff);color:#07111f;font-weight:800;cursor:pointer;transition:transform .15s,filter .15s}button:hover{filter:brightness(1.1);transform:translateY(-1px)}button:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}.mic{width:100%;font-size:14px}.secondary{background:#17253b;color:#d8e9ff;border:1px solid #304565}.buttons{display:flex;gap:9px;margin-top:10px}.buttons button{flex:1}
+#transcript{color:#c4d5ec;min-height:36px;font-size:13px;margin-top:14px;overflow-wrap:anywhere}.chatlog{height:270px;overflow:auto;display:flex;flex-direction:column;gap:12px;padding-right:3px}.bubble{padding:11px 13px;border-radius:14px;max-width:95%;white-space:pre-wrap;overflow-wrap:anywhere}.bot{background:#172943;border:1px solid #2a4669;align-self:flex-start}.user{background:#24325a;border:1px solid #4b5592;align-self:flex-end}.sender{font-size:10px;letter-spacing:1px;color:var(--cyan);font-weight:800;margin-bottom:3px}.compose{display:flex;gap:8px;margin-top:14px}.compose input{min-width:0;flex:1;background:#091222;border:1px solid #29415f;border-radius:12px;padding:12px;color:white;font:inherit}.compose button{padding-inline:18px}.hint{font-size:11px;color:var(--muted);margin-top:12px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.feature{border:1px solid #1e3350;border-radius:15px;padding:15px;background:#0b1425}.feature b{display:block;font-size:13px;margin-bottom:5px}.feature p{font-size:12px;color:var(--muted);margin:0}.foot{text-align:center;color:#667f9f;font-size:11px;margin-top:26px}
+@media(max-width:700px){main{margin-top:28px}.grid{grid-template-columns:1fr}.chatlog{height:230px}.features{grid-template-columns:1fr}.orb{width:130px;height:130px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">N</div><div>NEXOUS <span style="color:var(--cyan)">AI</span></div></div><div class="status">VOICE SYSTEM READY</div></header>
+<main>
+<div class="eyebrow">PERSONAL VOICE INTELLIGENCE</div>
+<section class="hero"><h1>Your Voice.<br><span>Your Intelligence.</span></h1><p>Meet your personal AI voice workspace. Talk, listen, and explore the first NEXOUS prototype.</p></section>
+<div class="grid">
+<section class="panel"><h2>Voice interface</h2><div class="orb-wrap"><div id="orb" class="orb"><span>✳</span></div><div class="orb-caption" id="orb-caption">Ready when you are</div></div><button id="mic" class="mic">🎙 Start talking</button><div class="buttons"><button id="stop" class="secondary">Stop listening</button><button id="test" class="secondary">Test voice</button></div><div id="transcript">Microphone permission is requested only when you start voice input.</div><p class="hint">Voice input depends on browser support and may require an internet connection. Best tested in Chrome or Edge.</p></section>
+<section class="panel"><h2>Conversation</h2><div id="chatlog" class="chatlog" aria-live="polite"><div class="bubble bot"><div class="sender">NEXOUS AI</div>Hey! I'm NEXOUS AI. You can type a message or try voice input. This starter version runs in your browser.</div></div><form id="form" class="compose"><input id="message" autocomplete="off" placeholder="Ask NEXOUS something…" aria-label="Message"><button type="submit">Send</button></form><p class="hint">Prototype mode: responses are generated locally with simple rules, not a trained large AI model yet.</p></section>
+</div>
+<div class="features"><div class="feature"><b>🎙 Voice input</b><p>Speak to the assistant using your browser's speech recognition.</p></div><div class="feature"><b>🔊 Spoken replies</b><p>Read replies aloud with built-in text-to-speech.</p></div><div class="feature"><b>🔒 Browser-first</b><p>No account, API key, or microphone use until you choose voice input.</p></div></div>
+<div class="foot">NEXOUS AI · EARLY BUILD · Made to grow into your own AI</div>
+</main>
+<script>
+const $=s=>document.querySelector(s), log=$('#chatlog');let recognition=null;
+function addBubble(text,who){const el=document.createElement('div');el.className='bubble '+who;const sender=document.createElement('div');sender.className='sender';sender.textContent=who==='user'?'YOU':'NEXOUS AI';el.append(sender,document.createTextNode(text));log.appendChild(el);log.scrollTop=log.scrollHeight}
+function replyFor(raw){const s=raw.toLowerCase().trim();
+if(/\b(hello|hi|hey|namaste)\b/.test(s))return 'Hello! 👋 I’m NEXOUS AI. What would you like to explore today?';
+if(s.includes('your name')||s.includes('who are you'))return 'I’m NEXOUS AI, your personal voice-assistant project. This is the first browser prototype.';
+if(s.includes('time'))return 'Your device time is '+new Date().toLocaleTimeString()+'.';
+if(s.includes('date')||s.includes('today'))return 'Today on your device is '+new Date().toLocaleDateString()+'.';
+if(s.includes('joke'))return 'Why did the computer get cold? It left its Windows open. 😄';
+if(s.includes('help')||s.includes('what can you do'))return 'For now I can chat with basic built-in replies, take speech input, and speak responses. Next we can connect a real model and later explore custom voice training.';
+if(s.includes('thank'))return 'You’re welcome! Let’s keep building NEXOUS AI.';
+if(s.includes('agartala')||s.includes('tripura'))return 'Agartala, Tripura! I can help you brainstorm ideas about your home region. A full knowledge system is a future upgrade.';
+if(s.includes('voice')||s.includes('speak'))return 'Press “Start talking” to use speech input, or “Test voice” to hear the browser voice. Voice options depend on your device.';
+return 'I heard you: “'+raw+'”. I’m currently in starter mode, so I don’t have a full language model connected yet. The next upgrade is connecting a real AI model safely, then adding your own voice.';
+}
+function speak(text){if(!('speechSynthesis'in window)){ $('#transcript').textContent='Text-to-speech is not supported by this browser.';return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.rate=1;u.pitch=1;const voices=speechSynthesis.getVoices();const preferred=voices.find(v=>/en-IN|en-US|en-GB/i.test(v.lang));if(preferred)u.voice=preferred;speechSynthesis.speak(u)}
+function send(text){text=text.trim();if(!text)return;addBubble(text,'user');$('#message').value='';const answer=replyFor(text);setTimeout(()=>{addBubble(answer,'bot')},180)}
+$('#form').addEventListener('submit',e=>{e.preventDefault();send($('#message').value)});
+$('#test').addEventListener('click',()=>speak('Hello! This is NEXOUS AI. Your voice. Your intelligence.'));
+$('#stop').addEventListener('click',()=>{if(recognition)recognition.stop();if('speechSynthesis'in window)speechSynthesis.cancel();$('#orb').classList.remove('listening');$('#orb-caption').textContent='Ready when you are'});
+$('#mic').addEventListener('click',()=>{const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$('#transcript').textContent='Speech recognition is not supported here. Try current Chrome or Edge, or type below.';return}
+try{recognition=new SR();recognition.lang='en-IN';recognition.interimResults=true;recognition.continuous=false;recognition.onstart=()=>{$('#orb').classList.add('listening');$('#orb-caption').textContent='Listening…';$('#transcript').textContent='Speak now…';$('#mic').textContent='🎙 Listening…'};recognition.onresult=e=>{let interim='',final='';for(let i=e.resultIndex;i<e.results.length;i++){if(e.results[i].isFinal)final+=e.results[i][0].transcript;else interim+=e.results[i][0].transcript}$('#transcript').textContent=final?'Heard: '+final:'Hearing: '+interim;if(final){send(final);speak(replyFor(final))}};recognition.onerror=e=>{$('#transcript').textContent='Voice input issue: '+e.error+'. You can still type a message.'};recognition.onend=()=>{$('#orb').classList.remove('listening');$('#orb-caption').textContent='Ready when you are';$('#mic').textContent='🎙 Start talking'};recognition.start()}catch(err){$('#transcript').textContent='Could not start microphone. Check browser permissions.'}});
+if('speechSynthesis'in window)speechSynthesis.getVoices();
+</script>
+</body></html>
