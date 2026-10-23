@@ -24,9 +24,9 @@ if errorlevel 1 (
   exit /b 1
 )
 
-if exist "D:\\" (
-  set "OLLAMA_MODELS=D:\\NEXOUS-AI-Models"
-  if not exist "D:\\NEXOUS-AI-Models" mkdir "D:\\NEXOUS-AI-Models"
+if exist "D:\" (
+  set "OLLAMA_MODELS=D:\NEXOUS-AI-Models"
+  if not exist "D:\NEXOUS-AI-Models" mkdir "D:\NEXOUS-AI-Models"
   echo Model files will be stored on D: to avoid filling the Windows drive.
 ) else (
   echo WARNING: D: drive not found. Ollama may store model files on C:.
